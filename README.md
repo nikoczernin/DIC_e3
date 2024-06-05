@@ -1,0 +1,3 @@
+- install required libraries!
+- download weights and input images from TUWEL
+- always commit and push immedeately and intermedeately, noone likes having to sift through changes just because someone else was lazy!
