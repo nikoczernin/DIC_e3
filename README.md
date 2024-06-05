@@ -1,3 +1,4 @@
 - install required libraries!
 - download weights and input images from TUWEL
 - always commit and push immedeately and intermedeately, noone likes having to sift through changes just because someone else was lazy!
+- DO NOT "Add" input images folder `input_folder`, so that nobody else has to download them! same goes for `yolo_tiny_configs`
