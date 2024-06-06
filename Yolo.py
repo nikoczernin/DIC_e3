@@ -107,7 +107,7 @@ class Yolo:
 
         return class_ids_pruned, confidences_pruned, boxes_pruned
 
-    def transform_draw(self, img_path_in, img_path_out, display=False):
+    def transform_draw(self, img_path_in, display=False):
         image = cv2.imread(img_path_in)
         class_ids, confidences, boxes = self.transform(img_path_in)
         print(class_ids)
@@ -127,13 +127,19 @@ class Yolo:
             # Put the class label text near the top-left corner of the bounding box
             cv2.putText(image, label, (x, y + 30), font, 3, color, 3)
 
-        # Save the output image with the drawn bounding boxes
-        cv2.imwrite(img_path_out, image)
-
         if display:
             # Optionally display the output image (useful for local testing)
             # cv2.imshow() displays the image in a window
             cv2.imshow("Image", image)
+
+        return image
+
+
+    def save_image(self, image, img_path_out):
+        # does not work on AWS i think
+        # Save the output image with the drawn bounding boxes
+        cv2.imwrite(img_path_out, image)
+
 
 
 
