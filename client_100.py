@@ -1,6 +1,7 @@
 import requests
 import base64
 import uuid
+import json
 import os
 import sys
 import time
@@ -44,8 +45,10 @@ def post_image(image_path, endpoint):
 
 
 def process_responses(combined_results):
-    output_file = "output/output.txt"
-    timelog_file = "output/timelog.csv"
+    output_file = "output/output_100.txt"
+    timelog_file = "output/timelog_100.csv"
+
+    os.makedirs(os.path.dirname(output_file), exist_ok=True)
 
     with open(output_file, "w") as f:
         for result in combined_results:
@@ -85,18 +88,19 @@ def process_responses(combined_results):
 def main(input_folder, endpoint):
     combined_results = []
 
-    for image_filename in os.listdir(input_folder):
-        image_path = os.path.join(input_folder, image_filename)
-        if not os.path.isfile(image_path):
-            print(f"No file: {image_path}")
-            continue
+    for _ in range(100):
+        for image_filename in os.listdir(input_folder):
+            image_path = os.path.join(input_folder, image_filename)
+            if not os.path.isfile(image_path):
+                print(f"No file: {image_path}")
+                continue
 
-        result, transfer_time, inference_time = post_image(image_path, endpoint)
-        combined_results.append({
-            "data": result,
-            "transfer_time": transfer_time,
-            "inference_time": inference_time
-        })
+            result, transfer_time, inference_time = post_image(image_path, endpoint)
+            combined_results.append({
+                "data": result,
+                "transfer_time": transfer_time,
+                "inference_time": inference_time
+            })
 
     process_responses(combined_results)
 

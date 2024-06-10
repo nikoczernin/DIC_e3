@@ -4,7 +4,7 @@ import numpy as np
 import base64
 import uuid
 import os
-from Yolo_Flask import Yolo
+from yolo.Yolo import Yolo
 
 app = Flask(__name__)
 
@@ -20,7 +20,8 @@ def object_detection():
     try:
         image_np = _decode_image(image_data)
         img_path = _save_image(image_np, image_id)
-        class_ids, confidences = yolo.transform(img_path)
+        #class_ids, confidences, boxes  = yolo.transform(img_path)
+        class_ids, confidences, boxes  = yolo.transform_draw(img_path)
         detected_objects = _format_detection_results(class_ids, confidences)
         response = {
             "id": image_id,
@@ -31,7 +32,8 @@ def object_detection():
         return jsonify({"error": str(e)}), 400
     finally:
         if os.path.exists(img_path):
-            os.remove(img_path)
+            #os.remove(img_path)
+            pass
 
 def _decode_image(image_data):
     image_bytes = base64.b64decode(image_data)
