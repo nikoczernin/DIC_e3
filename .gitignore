@@ -5,3 +5,4 @@ yolo/yolo_tiny_configs
 .idea
 .venv
 output.txt
+.DS_Store
