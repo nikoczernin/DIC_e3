@@ -6,3 +6,8 @@ yolo/yolo_tiny_configs
 .venv
 output.txt
 .DS_Store
+# Ignore zip files named python.zip
+python.zip
+
+# Ignore zip files named python followed by a space and a number
+python *.zip
