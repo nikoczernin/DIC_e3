@@ -105,6 +105,23 @@ class Yolo:
 
         return class_ids_pruned, confidences_pruned, boxes_pruned
 
+
+    def draw(self, image, class_ids, confidences, boxes, color=(0, 255, 0)):
+        # Draw bounding boxes on the image
+        font = cv2.FONT_HERSHEY_PLAIN
+        image_drawn = image.copy()
+
+        font = cv2.FONT_HERSHEY_PLAIN
+        for i in range(len(boxes)):
+            x, y, w, h = boxes[i]
+            label = str(self.classes[class_ids[i]])
+            cv2.rectangle(image_drawn, (x, y), (x + w, y + h), color, 2)
+            cv2.putText(image_drawn, label, (x, y + 30), font, 3, color, 3)
+
+        return image_drawn
+
+
+
     def transform_draw(self, img_path_in, display=False, verbose=False, color=(0, 255, 0)):
         """
         Perform object detection on an image and draw bounding boxes on the detected objects.
@@ -118,22 +135,16 @@ class Yolo:
         class_ids, confidences, boxes = self.transform(img_path_in, verbose=verbose)
 
         # Draw bounding boxes on the image
-        font = cv2.FONT_HERSHEY_PLAIN
-        for i in range(len(boxes)):
-            x, y, w, h = boxes[i]
-            label = str(self.classes[class_ids[i]])
-            cv2.rectangle(image, (x, y), (x + w, y + h), color, 2)
-            cv2.putText(image, label, (x, y + 30), font, 3, color, 3)
+        image = self.draw(image, class_ids, confidences, boxes, color=color)
 
         if display:
             cv2.imshow("Image", image)
             cv2.waitKey(0)
             cv2.destroyAllWindows()
 
-        # Save the image in the same path
-        cv2.imwrite(img_path_in, image)
+        return image, class_ids, confidences, boxes
 
-        return class_ids, confidences, boxes
+
 
     def _load_image(self, img_path):
         """
