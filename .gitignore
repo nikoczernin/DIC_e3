@@ -1,3 +1,5 @@
+input_folder
+yolo_tiny_configs
 yolo/yolo_tiny_configs
 .ipynb_checkpoints
 .idea
