@@ -1,16 +1,21 @@
 import cv2
 import numpy as np
+import os
 
 class Yolo:
-    def __init__(self, config_dir= "./Yolo/yolo_tiny_configs", confidence_threshold=0.0, nms_threshold=0.0):
+    def __init__(self, config_dir= "yolo_tiny_configs", confidence_threshold=0.0, nms_threshold=0.0):
         """
         Initialize the Yolo object with configuration directory, confidence threshold and NMS threshold.
         Args:
             config_dir (str): Directory containing YOLO configuration files.
+                Path starts from location of this python class file
             confidence_threshold (float): Confidence threshold for detections.
             nms_threshold (float): Non-max suppression threshold.
         """
-        self.config_dir = config_dir
+        self.config_dir = os.path.dirname(__file__)
+        self.config_dir = os.path.join(self.config_dir, config_dir)
+
+        print("Loading YOLO model from:", self.config_dir)
         self.confidence_threshold = confidence_threshold
         self.nms_threshold = nms_threshold
         self.net = self._load_model()
@@ -25,9 +30,14 @@ class Yolo:
         """
         weights_path = f"{self.config_dir}/yolov3-tiny.weights"
         config_path = f"{self.config_dir}/yolov3-tiny.cfg"
-        print(config_path)
-        net = cv2.dnn.readNet(weights_path, config_path)
+        try:
+            net = cv2.dnn.readNet(weights_path, config_path)
+        except cv2.error as e:
+            print("Error loading YOLO model:", e)
+            print("Please make sure the YOLO configuration files are in the correct directory.")
+            raise Exception("""Error loading YOLO model. Please make sure the YOLO configuration files are in the correct directory.""")
         return net
+
 
     def _load_classes(self):
         """
@@ -211,7 +221,7 @@ class Yolo:
 
 
 if __name__ == "__main__":
-    yolo = Yolo(config_dir= "../../yolo_tiny_configs")
+    yolo = Yolo()
     print("Testing Yolo on an image!")
     yolo.transform("../../../input_folder/000000000674.jpg", verbose=True)
     print("Great success!")
