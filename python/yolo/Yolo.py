@@ -47,10 +47,30 @@ class Yolo:
             output_layers (list): List of output layer names.
         """
         layer_names = self.net.getLayerNames()
-        output_layers = [layer_names[i - 1] for i in self.net.getUnconnectedOutLayers()]
+        # get the names of the output layers in the network
+        unconnected_out_layers = self.net.getUnconnectedOutLayers()
+        # it happens that they might be a numpy.ndarray of numpy.ndarrays of indices, rather than a numpy.ndarray of indices
+        # somehow that's not always the case
+        # if it is, flatten it here
+        unconnected_out_layers = self.flatten_list_of_iterables(unconnected_out_layers)
+        output_layers = [layer_names[i - 1] for i in unconnected_out_layers]
         return output_layers
 
-    def transform(self, img_path):
+
+    def flatten_list_of_iterables(self, list_of_iterables):
+        """
+        Flatten a list of lists, if the first element is a list or numpy array.
+        Otherwise, return the list as is.
+        Args:
+            list_of_lists: List of lists or numpy arrays.
+        """
+        if isinstance(list_of_iterables[0], list) or isinstance(list_of_iterables[0], np.ndarray):
+            return [item for sublist in list_of_iterables for item in sublist]
+        else:
+            return list_of_iterables
+
+
+    def transform(self, img_path, verbose=False):
         """
         Perform object detection on an image.
         Args:
@@ -63,9 +83,19 @@ class Yolo:
         self.net.setInput(blob)  # Set the input to the model
         outs = self.net.forward(self.output_layers)  # Perform the forward pass
         class_ids, confidences, boxes = self._process_detections(outs, image.shape[:2])  # Process the detections
-        return self._apply_nms(boxes, confidences, class_ids)  # Apply non-max suppression
 
-    def transform_draw(self, img_path_in, display=False):
+        # Apply non-max suppression
+        class_ids_pruned, confidences_pruned, boxes_pruned = self._apply_nms(boxes, confidences, class_ids)
+
+        # print results
+        if verbose:
+            print("We found")
+            for i, conf in zip(class_ids_pruned, confidences_pruned):
+                print(f"--> a {self.classes[i]} with a confidence of {conf}")
+
+        return class_ids_pruned, confidences_pruned, boxes_pruned
+
+    def transform_draw(self, img_path_in, display=False, verbose=False, color=(0, 255, 0)):
         """
         Perform object detection on an image and draw bounding boxes on the detected objects.
         Args:
@@ -75,14 +105,13 @@ class Yolo:
             image: Image with bounding boxes drawn.
         """
         image = cv2.imread(img_path_in)
-        class_ids, confidences, boxes = self.transform(img_path_in)
+        class_ids, confidences, boxes = self.transform(img_path_in, verbose=verbose)
 
         # Draw bounding boxes on the image
         font = cv2.FONT_HERSHEY_PLAIN
         for i in range(len(boxes)):
             x, y, w, h = boxes[i]
             label = str(self.classes[class_ids[i]])
-            color = (0, 255, 0)
             cv2.rectangle(image, (x, y), (x + w, y + h), color, 2)
             cv2.putText(image, label, (x, y + 30), font, 3, color, 3)
 
@@ -163,6 +192,9 @@ class Yolo:
             tuple: Sorted class IDs and confidences after NMS.
         """
         indexes = cv2.dnn.NMSBoxes(boxes, confidences, self.confidence_threshold, self.nms_threshold)
+        # if indexes is a list of iterables instead of a list of indices, flatten them
+        indexes = self.flatten_list_of_iterables(indexes)
+        print(indexes)
 
         class_ids_pruned = [class_ids[i] for i in indexes]
         confidences_pruned = [confidences[i] for i in indexes]
@@ -174,7 +206,12 @@ class Yolo:
         confidences_sorted = [confidences_pruned[i] for i in sorted_indices]
         boxes_sorted = [boxes_pruned[i] for i in sorted_indices]
 
-        return class_ids_sorted, confidences_sorted,boxes_sorted
+        return class_ids_sorted, confidences_sorted, boxes_sorted
+
+
 
 if __name__ == "__main__":
-    yolo = Yolo(config_dir= "./yolo_tiny_configs")
+    yolo = Yolo(config_dir= "../../yolo_tiny_configs")
+    print("Testing Yolo on an image!")
+    yolo.transform("../../../input_folder/000000000674.jpg", verbose=True)
+    print("Great success!")
