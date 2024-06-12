@@ -2,133 +2,112 @@ import cv2
 import numpy as np
 
 class Yolo:
-    def __init__(self, config_dir= "./Yolo/yolo_tiny_configs", confidence_threshold=0.0, nms_threshold=0.0):
-        """
-        Initialize the Yolo object with configuration directory, confidence threshold and NMS threshold.
-        Args:
-            config_dir (str): Directory containing YOLO configuration files.
-            confidence_threshold (float): Confidence threshold for detections.
-            nms_threshold (float): Non-max suppression threshold.
-        """
+
+    # Initialize Yolo object with configuration directory, confidence threshold and NMS threshold
+    def __init__(self, config_dir="./Yolo/yolo_tiny_configs", confidence_threshold=0.0, nms_threshold=0.0):
         self.config_dir = config_dir
         self.confidence_threshold = confidence_threshold
         self.nms_threshold = nms_threshold
+        # Load YOLO model
         self.net = self._load_model()
+        # Load class names
         self.classes = self._load_classes()
+        # Get output layer names
         self.output_layers = self._get_output_layers()
 
+    # Load  YOLO model from configuration files
     def _load_model(self):
-        """
-        Load the YOLO model from the configuration files.
-        Returns:
-            net: Loaded YOLO model cv2.dnn_Net.
-        """
+        # Load model weights
         weights_path = f"{self.config_dir}/yolov3-tiny.weights"
+        # Load model config
         config_path = f"{self.config_dir}/yolov3-tiny.cfg"
-        print(config_path)
+        # Load model
         net = cv2.dnn.readNet(weights_path, config_path)
         return net
 
+    # Load class names from coco.names file
     def _load_classes(self):
-        """
-        Load the class names from the coco.names file.
-        Returns:
-            classes: List of class names.
-        """
         classes_path = f"{self.config_dir}/coco.names"
         with open(classes_path, "r") as f:
-            classes = [line.strip() for line in f.readlines()]
+            classes = [line.strip() for line in f.readlines()]  # Read and strip each line
         return classes
 
+    # Get the output layers of the YOLO model
     def _get_output_layers(self):
-        """
-        Get the output layers of the YOLO model.
-        Returns:
-            output_layers (list): List of output layer names.
-        """
+        # Get all layer names
         layer_names = self.net.getLayerNames()
+        # Get unconnected layers
         output_layers = [layer_names[i - 1] for i in self.net.getUnconnectedOutLayers()]
         return output_layers
 
+    # Perform object detection on an image
     def transform(self, img_path):
-        """
-        Perform object detection on an image.
-        Args:
-            img_path: Path to the input image.
-        Returns:
-            tuple: Sorted class IDs and confidences of detected objects.
-        """
-        image = self._load_image(img_path)  # Load the image
-        blob = self._prepare_image(image)  # Prepare the image for the model
-        self.net.setInput(blob)  # Set the input to the model
-        outs = self.net.forward(self.output_layers)  # Perform the forward pass
-        class_ids, confidences, boxes = self._process_detections(outs, image.shape[:2])  # Process the detections
-        return self._apply_nms(boxes, confidences, class_ids)  # Apply non-max suppression
+        # Load image
+        image = self._load_image(img_path)
+        # Prepare image
+        blob = self._prepare_image(image)
+        # Set the input
+        self.net.setInput(blob)
+        # Perform forward pass
+        outs = self.net.forward(self.output_layers)
+        # Process detections
+        class_ids, confidences, boxes = self._process_detections(outs, image.shape[:2])
+        # Apply non-max suppression and return results
+        return self._apply_nms(boxes, confidences, class_ids)
 
+    # Perform object detection on an image and draw bounding boxes on the detected objects.
     def transform_draw(self, img_path_in, display=False):
-        """
-        Perform object detection on an image and draw bounding boxes on the detected objects.
-        Args:
-            img_path_in: Path to the input image.
-            display: Whether to display the image with bounding boxes.
-        Returns:
-            image: Image with bounding boxes drawn.
-        """
+
+        # Read input image
         image = cv2.imread(img_path_in)
+        # Perform detection
         class_ids, confidences, boxes = self.transform(img_path_in)
 
         # Draw bounding boxes on the image
         font = cv2.FONT_HERSHEY_PLAIN
         for i in range(len(boxes)):
             x, y, w, h = boxes[i]
+            # Get class label
             label = str(self.classes[class_ids[i]])
+            # Set bounding box color
             color = (0, 255, 0)
+            # Draw rectangle
             cv2.rectangle(image, (x, y), (x + w, y + h), color, 2)
+            # Draw label
             cv2.putText(image, label, (x, y + 30), font, 3, color, 3)
 
+        # In case you want to display the image
         if display:
+            # Display image
             cv2.imshow("Image", image)
             cv2.waitKey(0)
             cv2.destroyAllWindows()
 
-        # Save the image in the same path
+        # Save image with bounding boxes
         cv2.imwrite(img_path_in, image)
 
+        # Return results
         return class_ids, confidences, boxes
 
+    # Load image from specified path
     def _load_image(self, img_path):
-        """
-        Load an image from the specified path.
-        Args:
-            img_path: Path to the image file.
-        Returns:
-            image: Loaded image.
-        """
+
+        # Read image
         image = cv2.imread(img_path)
         if image is None:
+            # Raise error if image not found
             raise FileNotFoundError(f"No image found at {img_path}")
         return image
 
+    # Prepare image for the model
     def _prepare_image(self, image):
-        """
-        Prepare the image for the YOLO model.
-        Args:
-            image: Input image.
-        Returns:
-            blob: Prepared image blob.
-        """
+        # Create blob
         blob = cv2.dnn.blobFromImage(image, 0.00392, (416, 416), (0, 0, 0), True, crop=False)
         return blob
 
+    # Process  detections from the YOLO model
     def _process_detections(self, outs, image_shape):
-        """
-        Process the detections from the YOLO model.
-        Args:
-            outs: Output from the YOLO model.
-            image_shape: Shape of the input image.
-        Returns:
-            tuple: Class IDs, confidences, and bounding boxes of detected objects.
-        """
+        # Get image dimensions
         height, width = image_shape
         class_ids = []
         confidences = []
@@ -136,8 +115,11 @@ class Yolo:
 
         for out in outs:
             for detection in out:
+                # Get scores for all classes
                 scores = detection[5:]
+                # Get class ID with the highest score
                 class_id = np.argmax(scores)
+                # Get the confidence for the highest score
                 confidence = scores[class_id]
                 if confidence >= self.confidence_threshold:
                     center_x = int(detection[0] * width)
@@ -146,35 +128,41 @@ class Yolo:
                     h = int(detection[3] * height)
                     x = int(center_x - w / 2)
                     y = int(center_y - h / 2)
+                    # Append bounding box
                     boxes.append([x, y, w, h])
+                    # Append confidence
                     confidences.append(float(confidence))
+                    # Append class ID
                     class_ids.append(class_id)
 
         return class_ids, confidences, boxes
 
+    # Apply Non-Maximum Suppression (NMS) to filter out overlapping boxes with low confidence
     def _apply_nms(self, boxes, confidences, class_ids):
-        """
-        Apply Non-Maximum Suppression (NMS) to filter out overlapping boxes.
-        Args:
-            boxes: List of bounding boxes.
-            confidences: List of confidences.
-            class_ids: List of class IDs.
-        Returns:
-            tuple: Sorted class IDs and confidences after NMS.
-        """
+
+        # Apply NMS
         indexes = cv2.dnn.NMSBoxes(boxes, confidences, self.confidence_threshold, self.nms_threshold)
 
+        # Prune class IDs
         class_ids_pruned = [class_ids[i] for i in indexes]
+        # Prune confidences
         confidences_pruned = [confidences[i] for i in indexes]
+        # Prune boxes
         boxes_pruned = [boxes[i] for i in indexes]
 
         # Sort the pruned results by confidence in descending order
+        # Get sorted indices
         sorted_indices = np.argsort(confidences_pruned)[::-1]
+        # Sort class IDs
         class_ids_sorted = [class_ids_pruned[i] for i in sorted_indices]
+        # Sort confidences
         confidences_sorted = [confidences_pruned[i] for i in sorted_indices]
+        # Sort boxes
         boxes_sorted = [boxes_pruned[i] for i in sorted_indices]
 
-        return class_ids_sorted, confidences_sorted,boxes_sorted
+        # Return sorted results
+        return class_ids_sorted, confidences_sorted, boxes_sorted
 
 if __name__ == "__main__":
-    yolo = Yolo(config_dir= "./yolo_tiny_configs")
+    # Initialize YOLO object
+    yolo = Yolo(config_dir="./yolo_tiny_configs")
