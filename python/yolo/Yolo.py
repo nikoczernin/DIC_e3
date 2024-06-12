@@ -142,7 +142,7 @@ class Yolo:
             cv2.waitKey(0)
             cv2.destroyAllWindows()
 
-        return image, class_ids, confidences, boxes
+        return image, (class_ids, confidences, boxes)
 
 
 
