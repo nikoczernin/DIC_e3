@@ -219,6 +219,11 @@ class Yolo:
         return class_ids_sorted, confidences_sorted, boxes_sorted
 
 
+    def save_image(self, image, img_path_out):
+        # does not work on AWS i think
+        # Save the output image with the drawn bounding boxes
+        cv2.imwrite(img_path_out, image)
+
 
 if __name__ == "__main__":
     yolo = Yolo()
