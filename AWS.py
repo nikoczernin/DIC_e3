@@ -28,6 +28,7 @@ class AWS:
                 Item={
                     'ImagePath': image_path,
                     'Objects': objects,
+                    'ClassIDs': objects,
                     'Confidences': confidences
                 }
             )
@@ -39,17 +40,14 @@ class AWS:
 
 def main():
     # Define your local file, bucket name, and the S3 file name
-    local_file_path = 'path_to_your_image.jpg'  # Replace with your image file path
+    local_file_path = 'input_folder/000000000069.jpg'  # Replace with your image file path
     bucket = 'yolobuck'  # Your bucket name
-    s3_file_path = 'your_image.jpg'  # Name you want to save as in S3
+    s3_file_path = '000000000069.jpg'  # Name you want to save as in S3
 
     # Initialize the AWS class
     aws = AWS()
     # Upload the file
     uploaded = aws.upload_to_aws(local_file_path, bucket, s3_file_path)
-
-
-
 
 
 
