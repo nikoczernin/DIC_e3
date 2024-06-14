@@ -215,7 +215,6 @@ class Yolo:
         indexes = cv2.dnn.NMSBoxes(boxes, confidences, self.confidence_threshold, self.nms_threshold)
         # if indexes is a list of iterables instead of a list of indices, flatten them
         indexes = self.flatten_list_of_iterables(indexes)
-        print(indexes)
 
         class_ids_pruned = [class_ids[i] for i in indexes]
         confidences_pruned = [confidences[i] for i in indexes]
@@ -239,5 +238,6 @@ class Yolo:
 if __name__ == "__main__":
     yolo = Yolo()
     print("Testing Yolo on an image!")
-    yolo.transform("../../../input_folder/000000000674.jpg", verbose=True)
+    image, _ = yolo.transform_draw("../../input_folder/000000000674.jpg", verbose=True)
+    yolo.save_image(image, "example_output_img.jpg")
     print("Great success!")
