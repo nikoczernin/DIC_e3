@@ -29,9 +29,9 @@ def object_detection():
         # By commenting out the lines, boxes can be drawn around the elements in addition to recognising the objects.
         # This can be used to better understand the performance and accuracy of the model
         # Perform object recognition on the saved image and draw boxes with identified objects
-        class_ids, confidences, boxes = yolo.transform_draw(img_path)
+        #image, (class_ids, confidences, boxes) = yolo.transform_draw(img_path)
         # Perform object recognition on the saved image without draw boxes
-        #class_ids, confidences, boxes = yolo.transform(img_path)
+        class_ids, confidences, boxes = yolo.transform(img_path)
 
         # Format the results
         detected_objects = _format_detection_results(class_ids, confidences)
@@ -48,7 +48,9 @@ def object_detection():
     finally:
         # Clean up the saved image file
         if os.path.exists(img_path):
-            pass  # Image removal can be enabled if necessary
+            # Image removal can be enabled if necessary
+            os.remove(img_path)
+            #pass
 
 # Decode base64 image data to a numpy array
 def _decode_image(image_data):
@@ -70,6 +72,7 @@ def _save_image(img, image_id):
 # Format the object detection results
 def _format_detection_results(class_ids, confidences):
     detected_objects = []
+    print(len(class_ids))
     for class_id, confidence in zip(class_ids, confidences):
         detected_object = {
             "label": yolo.classes[class_id],
