@@ -9,9 +9,9 @@
       <excludeFolder url="file://$MODULE_DIR$/input_folder" />
       <excludeFolder url="file://$MODULE_DIR$/output" />
       <excludeFolder url="file://$MODULE_DIR$/temp" />
-      <excludeFolder url="file://$MODULE_DIR$/yolo/yolo_tiny_configs" />
+      <excludeFolder url="file://$MODULE_DIR$/python/yolo/yolo_tiny_configs" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.8" jdkType="Python SDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PackageRequirementsSettings">
