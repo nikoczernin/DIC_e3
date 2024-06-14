@@ -31,14 +31,15 @@ def object_detection():
         # Perform object recognition on the saved image and draw boxes with identified objects
         #image, (class_ids, confidences, boxes) = yolo.transform_draw(img_path)
         # Perform object recognition on the saved image without draw boxes
-        class_ids, confidences, boxes = yolo.transform(img_path)
+        object_detection_time, class_ids, confidences, boxes = yolo.transform_and_time(img_path)
 
         # Format the results
         detected_objects = _format_detection_results(class_ids, confidences)
         # Prepare the response
         response = {
             "id": image_id,
-            "objects": detected_objects
+            "objects": detected_objects,
+            "inference_time": object_detection_time
         }
         # Return response as JSON
         return jsonify(response)
@@ -72,7 +73,6 @@ def _save_image(img, image_id):
 # Format the object detection results
 def _format_detection_results(class_ids, confidences):
     detected_objects = []
-    print(len(class_ids))
     for class_id, confidence in zip(class_ids, confidences):
         detected_object = {
             "label": yolo.classes[class_id],

@@ -1,9 +1,10 @@
 import cv2
 import numpy as np
 import os
+import time
 
 class Yolo:
-    def __init__(self, config_dir= "yolo_tiny_configs", confidence_threshold=0.0, nms_threshold=0.0):
+    def __init__(self, config_dir= "yolo_tiny_configs", confidence_threshold=0.5, nms_threshold=0.0):
         """
         Initialize the Yolo object with configuration directory, confidence threshold and NMS threshold.
         Args:
@@ -104,6 +105,33 @@ class Yolo:
                 print(f"--> a {self.classes[i]} with a confidence of {conf}")
 
         return class_ids_pruned, confidences_pruned, boxes_pruned
+
+    def transform_and_time(self, img_path, verbose=False):
+        """
+        Perform object detection on an image.
+        Args:
+            img_path: Path to the input image.
+        Returns:
+            tuple: Sorted class IDs and confidences of detected objects.
+        """
+        start_time = time.time()
+        image = self._load_image(img_path)  # Load the image
+        blob = self._prepare_image(image)  # Prepare the image for the model
+        self.net.setInput(blob)  # Set the input to the model
+        outs = self.net.forward(self.output_layers)  # Perform the forward pass
+        class_ids, confidences, boxes = self._process_detections(outs, image.shape[:2])  # Process the detections
+
+        # Apply non-max suppression
+        class_ids_pruned, confidences_pruned, boxes_pruned = self._apply_nms(boxes, confidences, class_ids)
+        end_time = time.time()
+        object_detection_time = end_time - start_time
+        # print results
+        if verbose:
+            print("We found")
+            for i, conf in zip(class_ids_pruned, confidences_pruned):
+                print(f"--> a {self.classes[i]} with a confidence of {conf}")
+
+        return object_detection_time, class_ids_pruned, confidences_pruned, boxes_pruned
 
 
     def draw(self, image, class_ids, confidences, boxes, color=(0, 255, 0)):
@@ -214,20 +242,22 @@ class Yolo:
         """
         indexes = cv2.dnn.NMSBoxes(boxes, confidences, self.confidence_threshold, self.nms_threshold)
         # if indexes is a list of iterables instead of a list of indices, flatten them
-        indexes = self.flatten_list_of_iterables(indexes)
+        if len(indexes) > 0:
+            indexes = self.flatten_list_of_iterables(indexes)
 
-        class_ids_pruned = [class_ids[i] for i in indexes]
-        confidences_pruned = [confidences[i] for i in indexes]
-        boxes_pruned = [boxes[i] for i in indexes]
+            class_ids_pruned = [class_ids[i] for i in indexes]
+            confidences_pruned = [confidences[i] for i in indexes]
+            boxes_pruned = [boxes[i] for i in indexes]
 
-        # Sort the pruned results by confidence in descending order
-        sorted_indices = np.argsort(confidences_pruned)[::-1]
-        class_ids_sorted = [class_ids_pruned[i] for i in sorted_indices]
-        confidences_sorted = [confidences_pruned[i] for i in sorted_indices]
-        boxes_sorted = [boxes_pruned[i] for i in sorted_indices]
+            # Sort the pruned results by confidence in descending order
+            sorted_indices = np.argsort(confidences_pruned)[::-1]
+            class_ids_sorted = [class_ids_pruned[i] for i in sorted_indices]
+            confidences_sorted = [confidences_pruned[i] for i in sorted_indices]
+            boxes_sorted = [boxes_pruned[i] for i in sorted_indices]
 
-        return class_ids_sorted, confidences_sorted, boxes_sorted
-
+            return class_ids_sorted, confidences_sorted, boxes_sorted
+        else:
+            return [],[],[]
 
     def save_image(self, image, img_path_out):
         # does not work on AWS i think
