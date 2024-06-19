@@ -15,4 +15,3 @@ python *.zip
 /python/yolo/yolo_tiny_configs/
 yolo_tiny_configs
 yolo/yolo_tiny_configs
-aws_cli_creds.txt

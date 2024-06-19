@@ -3,7 +3,10 @@ import numpy as np
 import os
 import time
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 class Yolo:
     def __init__(self, config_dir= "yolo_tiny_configs", confidence_threshold=0.5, nms_threshold=0.0):
         """
