@@ -6,4 +6,7 @@
 # using the CLI
 to connect to the CLI, launch the LearnerLab, click `Star Lab`,
 click `AWS Details`, copy the CLIcreds into `~/.aws/credentials` 
+using `chmod +x aws_setup.sh` and `./aws_setup.sh`
+
+
 and run `aws s3 ls` to check if it works.

@@ -23,22 +23,21 @@ def object_detection():
     try:
         # Decode the base64 image data to a numpy array
         image_np = _decode_image(image_data)
+
         # Save the decoded image to a temporary path
         img_path = _save_image(image_np, image_id)
 
-        # By commenting out the lines, boxes can be drawn around the elements in addition to recognising the objects.
-        # This can be used to better understand the performance and accuracy of the model
-        # Perform object recognition on the saved image and draw boxes with identified objects
-        #image, (class_ids, confidences, boxes) = yolo.transform_draw(img_path)
-        # Perform object recognition on the saved image without draw boxes
-        class_ids, confidences, boxes = yolo.transform(img_path)
+        # Perform object recognition
+        object_detection_time, class_ids, confidences, boxes = yolo.transform_and_time(img_path)
 
         # Format the results
         detected_objects = _format_detection_results(class_ids, confidences)
+
         # Prepare the response
         response = {
             "id": image_id,
-            "objects": detected_objects
+            "objects": detected_objects,
+            "inference_time": object_detection_time
         }
         # Return response as JSON
         return jsonify(response)
@@ -48,7 +47,7 @@ def object_detection():
     finally:
         # Clean up the saved image file
         if os.path.exists(img_path):
-            # Image removal can be enabled if necessary
+            # Image removal can be enabled if needed
             os.remove(img_path)
             #pass
 
@@ -72,7 +71,6 @@ def _save_image(img, image_id):
 # Format the object detection results
 def _format_detection_results(class_ids, confidences):
     detected_objects = []
-    print(len(class_ids))
     for class_id, confidence in zip(class_ids, confidences):
         detected_object = {
             "label": yolo.classes[class_id],

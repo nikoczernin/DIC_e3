@@ -42,11 +42,8 @@ def post_image(image_path, endpoint):
         # Raise exception for HTTP errors
         response.raise_for_status()
 
-        # Get inference time from the response
-        inference_time = response.elapsed.total_seconds()
-
         # Return response data, transfer time and inference time
-        return response.json(), transfer_time, inference_time
+        return response.json(), transfer_time
 
     except Exception as err:
         # Print error
@@ -62,11 +59,11 @@ def process_responses(combined_results):
     timelog_file = "output/timelog.csv"
 
     # Write results to the output file
-    with open(output_file, "w") as f:
+    with (open(output_file, "w") as f):
         for result in combined_results:
             data = result.get("data", {})
             transfer_time = result.get("transfer_time", 0)
-            inference_time = result.get("inference_time", 0)
+            inference_time = data.get('inference_time')
 
             image_id = data.get('id', 'unknown')
             objects = data.get('objects', [])
@@ -88,7 +85,7 @@ def process_responses(combined_results):
         for result in combined_results:
             data = result.get("data", {})
             transfer_time = result.get("transfer_time", 0)
-            inference_time = result.get("inference_time", 0)
+            inference_time = data.get('inference_time')
 
             image_id = data.get('id', 'unknown')
             writer.writerow({
@@ -108,11 +105,10 @@ def main(input_folder, endpoint):
             continue
 
         # Send image and store results
-        result, transfer_time, inference_time = post_image(image_path, endpoint)
+        result, transfer_time = post_image(image_path, endpoint)
         combined_results.append({
             "data": result,
-            "transfer_time": transfer_time,
-            "inference_time": inference_time
+            "transfer_time": transfer_time
         })
     # Process and save results
     process_responses(combined_results)
@@ -131,5 +127,5 @@ if __name__ == '__main__':
     main(input_folder, endpoint)
 
     # Execute the main function 100x for the experiment
-    # for _ in range(100):
-    #    main(input_folder, endpoint)
+    #for _ in range(100):
+    #    main(input_folder, endpoint,)
