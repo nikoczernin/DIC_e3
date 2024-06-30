@@ -1,0 +1,607 @@
+Image ID: 78dcadb5-95b4-4b8d-b67f-8b246549fc58
+Detected: toilet with accuracy: 0.9690148830413818
+Transfer Time: 0.14916610717773438 seconds
+Inference Time: 0.13663101196289062 seconds
+------------------------------------------
+Image ID: add55cff-9919-4ba0-b71c-806c9332fc47
+Detected: oven with accuracy: 0.7555731534957886
+Detected: sink with accuracy: 0.7304723262786865
+Detected: refrigerator with accuracy: 0.6348217129707336
+Detected: microwave with accuracy: 0.6283434629440308
+Transfer Time: 0.05809187889099121 seconds
+Inference Time: 0.04965806007385254 seconds
+------------------------------------------
+Image ID: 1f2bf577-b67f-467b-8928-540532ab2c41
+Detected: sports ball with accuracy: 0.9715629816055298
+Detected: tennis racket with accuracy: 0.584551990032196
+Transfer Time: 0.052420854568481445 seconds
+Inference Time: 0.04513907432556152 seconds
+------------------------------------------
+Image ID: d0e40cdc-9878-43df-896c-f98ea7f8c984
+Detected: person with accuracy: 0.5654435753822327
+Detected: tie with accuracy: 0.24609237909317017
+Transfer Time: 0.05699896812438965 seconds
+Inference Time: 0.046562910079956055 seconds
+------------------------------------------
+Image ID: a7c05bb5-c529-423d-8fe2-5db85aa1908f
+Detected: person with accuracy: 0.21518723666667938
+Transfer Time: 0.05208587646484375 seconds
+Inference Time: 0.044654130935668945 seconds
+------------------------------------------
+Image ID: 527a7722-49f2-4478-b3b0-4b0b94e501ab
+Detected: parking meter with accuracy: 0.5558893084526062
+Transfer Time: 0.06648993492126465 seconds
+Inference Time: 0.04908275604248047 seconds
+------------------------------------------
+Image ID: 33984847-fc22-47d7-99f4-b7a737657836
+Detected: person with accuracy: 0.9585727453231812
+Detected: skateboard with accuracy: 0.35194870829582214
+Transfer Time: 0.06646490097045898 seconds
+Inference Time: 0.05492520332336426 seconds
+------------------------------------------
+Image ID: 0f6cf8ad-2be7-43eb-a298-874b3318eefa
+Detected: cat with accuracy: 0.9254351854324341
+Transfer Time: 0.05736804008483887 seconds
+Inference Time: 0.048673152923583984 seconds
+------------------------------------------
+Image ID: d295b9d6-8969-40d0-8d93-8855710ebb70
+Detected: truck with accuracy: 0.4107242226600647
+Transfer Time: 0.06378006935119629 seconds
+Inference Time: 0.05286884307861328 seconds
+------------------------------------------
+Image ID: 7d2cee59-fab8-469f-ba73-a3c8cfe4c768
+Detected: carrot with accuracy: 0.5776769518852234
+Detected: broccoli with accuracy: 0.3219136595726013
+Detected: broccoli with accuracy: 0.24115672707557678
+Transfer Time: 0.0611569881439209 seconds
+Inference Time: 0.050642967224121094 seconds
+------------------------------------------
+Image ID: 8c3de6c6-f8fb-4abc-816b-fab5ad2cfddc
+Transfer Time: 0.059821128845214844 seconds
+Inference Time: 0.04987215995788574 seconds
+------------------------------------------
+Image ID: afbf1056-2955-411d-803b-ac2731194c6a
+Transfer Time: 0.0747227668762207 seconds
+Inference Time: 0.06324291229248047 seconds
+------------------------------------------
+Image ID: 09b959da-9062-4c73-bc65-c6c70f5fe252
+Detected: stop sign with accuracy: 0.9195126891136169
+Detected: car with accuracy: 0.6983793377876282
+Detected: car with accuracy: 0.3260951638221741
+Detected: car with accuracy: 0.27700281143188477
+Transfer Time: 0.08720898628234863 seconds
+Inference Time: 0.07192611694335938 seconds
+------------------------------------------
+Image ID: 6f753b46-a488-416c-af22-8352bced8ef6
+Transfer Time: 0.09398722648620605 seconds
+Inference Time: 0.0781259536743164 seconds
+------------------------------------------
+Image ID: fca5f684-95b8-452a-81c9-418a2c915fbf
+Detected: person with accuracy: 0.7967322468757629
+Transfer Time: 0.16809296607971191 seconds
+Inference Time: 0.150770902633667 seconds
+------------------------------------------
+Image ID: 2c1663ce-eef7-450f-b01a-3c44c82f3bb2
+Detected: backpack with accuracy: 0.6893003582954407
+Detected: person with accuracy: 0.35184869170188904
+Transfer Time: 0.1602339744567871 seconds
+Inference Time: 0.1445930004119873 seconds
+------------------------------------------
+Image ID: 3652555b-a700-4cbd-8d81-d0d954429b89
+Detected: boat with accuracy: 0.6601997017860413
+Detected: boat with accuracy: 0.4547816216945648
+Detected: boat with accuracy: 0.257496178150177
+Detected: boat with accuracy: 0.2518129348754883
+Transfer Time: 0.1188499927520752 seconds
+Inference Time: 0.09763813018798828 seconds
+------------------------------------------
+Image ID: 7939d796-0993-490a-accf-53a2785dcd7e
+Transfer Time: 0.09941792488098145 seconds
+Inference Time: 0.08753275871276855 seconds
+------------------------------------------
+Image ID: 3f9517c3-c1e1-456b-b4b8-0430f43795f5
+Detected: motorbike with accuracy: 0.3449490964412689
+Detected: motorbike with accuracy: 0.29648035764694214
+Transfer Time: 0.08951902389526367 seconds
+Inference Time: 0.07804703712463379 seconds
+------------------------------------------
+Image ID: 6d3bf501-900b-4792-8de9-ab46ce9d80a8
+Detected: giraffe with accuracy: 0.7217812538146973
+Transfer Time: 0.08792495727539062 seconds
+Inference Time: 0.07414579391479492 seconds
+------------------------------------------
+Image ID: 970511bf-d343-4c01-aa7a-344fe7c350fd
+Detected: person with accuracy: 0.8430765867233276
+Transfer Time: 0.08676624298095703 seconds
+Inference Time: 0.07566475868225098 seconds
+------------------------------------------
+Image ID: 6115db69-6fe0-45f3-a16c-e936cb5bdd29
+Detected: fork with accuracy: 0.332144558429718
+Transfer Time: 0.09836792945861816 seconds
+Inference Time: 0.07941699028015137 seconds
+------------------------------------------
+Image ID: 884f7402-150b-4f02-b7f3-8ede54cb2fbe
+Detected: car with accuracy: 0.5244623422622681
+Detected: person with accuracy: 0.32681530714035034
+Transfer Time: 0.1109158992767334 seconds
+Inference Time: 0.09868502616882324 seconds
+------------------------------------------
+Image ID: 08feec24-8eb5-4f1a-96ed-a10baa1ab046
+Detected: person with accuracy: 0.8554944396018982
+Transfer Time: 0.11541318893432617 seconds
+Inference Time: 0.10118508338928223 seconds
+------------------------------------------
+Image ID: 3e799025-280a-4b49-a43c-900315549583
+Detected: tie with accuracy: 0.47193044424057007
+Transfer Time: 0.11085915565490723 seconds
+Inference Time: 0.10024785995483398 seconds
+------------------------------------------
+Image ID: 1d598e8e-7e44-4721-af8c-dfc04886023e
+Detected: fire hydrant with accuracy: 0.9587148427963257
+Detected: car with accuracy: 0.24051056802272797
+Detected: person with accuracy: 0.2269807904958725
+Transfer Time: 0.1073610782623291 seconds
+Inference Time: 0.09206581115722656 seconds
+------------------------------------------
+Image ID: b7b216d7-6add-405e-90dc-3ae0a3fd90ef
+Transfer Time: 0.09258484840393066 seconds
+Inference Time: 0.0806879997253418 seconds
+------------------------------------------
+Image ID: 48dea6d0-675c-49bb-89e9-b6345ab9b42e
+Detected: motorbike with accuracy: 0.5234010219573975
+Detected: person with accuracy: 0.3161126971244812
+Transfer Time: 0.0920400619506836 seconds
+Inference Time: 0.07166385650634766 seconds
+------------------------------------------
+Image ID: f8615971-b4fb-41e7-8f24-17c4121a30b4
+Detected: person with accuracy: 0.8723967671394348
+Transfer Time: 0.08640313148498535 seconds
+Inference Time: 0.07275676727294922 seconds
+------------------------------------------
+Image ID: c1de3aac-1c35-45d2-9873-b7ae31c79fca
+Detected: hot dog with accuracy: 0.9234308004379272
+Transfer Time: 0.08254194259643555 seconds
+Inference Time: 0.07006001472473145 seconds
+------------------------------------------
+Image ID: 3a3d3429-e712-48c1-975e-3bcd8023a0af
+Detected: traffic light with accuracy: 0.6213833093643188
+Transfer Time: 0.08762598037719727 seconds
+Inference Time: 0.07508206367492676 seconds
+------------------------------------------
+Image ID: 453f8aa5-c859-4059-8517-e5853aabbbc4
+Transfer Time: 0.10159087181091309 seconds
+Inference Time: 0.09290003776550293 seconds
+------------------------------------------
+Image ID: 484bb4a2-7752-4cfa-9eb5-ddf8e8d680ec
+Transfer Time: 0.10576891899108887 seconds
+Inference Time: 0.09294795989990234 seconds
+------------------------------------------
+Image ID: 2bf9f861-935e-4c10-85f6-5d543d181a89
+Detected: chair with accuracy: 0.30377936363220215
+Detected: bed with accuracy: 0.2674696147441864
+Transfer Time: 0.10475516319274902 seconds
+Inference Time: 0.0883021354675293 seconds
+------------------------------------------
+Image ID: 3ea8ffaa-700d-436a-a64f-b7ec8c4df548
+Detected: chair with accuracy: 0.726965069770813
+Transfer Time: 0.09804081916809082 seconds
+Inference Time: 0.08131885528564453 seconds
+------------------------------------------
+Image ID: 3d9dca63-0f39-4119-b4d9-5bf63496a3aa
+Detected: person with accuracy: 0.9984776973724365
+Detected: person with accuracy: 0.8179649710655212
+Transfer Time: 0.09509420394897461 seconds
+Inference Time: 0.07604813575744629 seconds
+------------------------------------------
+Image ID: 36844668-8cb1-4955-8fc9-1a10f0a895ac
+Transfer Time: 0.1116950511932373 seconds
+Inference Time: 0.09997892379760742 seconds
+------------------------------------------
+Image ID: 21ad4c68-427b-4817-bd94-a3727afa2309
+Transfer Time: 0.10858774185180664 seconds
+Inference Time: 0.09340476989746094 seconds
+------------------------------------------
+Image ID: 5356787e-13fc-4ae9-9941-8723fe19e472
+Detected: tvmonitor with accuracy: 0.9546047449111938
+Detected: person with accuracy: 0.613328218460083
+Detected: clock with accuracy: 0.212895929813385
+Detected: sofa with accuracy: 0.20668283104896545
+Transfer Time: 0.09611892700195312 seconds
+Inference Time: 0.08092188835144043 seconds
+------------------------------------------
+Image ID: c4e1bea8-2ee9-4d2b-8946-d10b2f10c3c7
+Detected: elephant with accuracy: 0.9560089111328125
+Transfer Time: 0.0965418815612793 seconds
+Inference Time: 0.07859992980957031 seconds
+------------------------------------------
+Image ID: 44489824-9837-424c-9355-64a5324a77e4
+Detected: clock with accuracy: 0.9809361696243286
+Detected: clock with accuracy: 0.8688989281654358
+Transfer Time: 0.0918419361114502 seconds
+Inference Time: 0.07786917686462402 seconds
+------------------------------------------
+Image ID: 0791ea4c-0003-4beb-8ce7-252ee6847190
+Detected: chair with accuracy: 0.5582296252250671
+Detected: dog with accuracy: 0.356000691652298
+Transfer Time: 0.11411499977111816 seconds
+Inference Time: 0.08898472785949707 seconds
+------------------------------------------
+Image ID: 850c054d-e932-466c-8389-b7ec9bbb7f2b
+Detected: person with accuracy: 0.8562898635864258
+Detected: person with accuracy: 0.8492725491523743
+Detected: bowl with accuracy: 0.6220893263816833
+Detected: cup with accuracy: 0.46246060729026794
+Detected: cup with accuracy: 0.365946501493454
+Detected: cup with accuracy: 0.2779451906681061
+Detected: bowl with accuracy: 0.2525113523006439
+Detected: spoon with accuracy: 0.23024538159370422
+Transfer Time: 0.11552095413208008 seconds
+Inference Time: 0.09945297241210938 seconds
+------------------------------------------
+Image ID: 11ffdd87-9d41-44d3-8052-7f888258fe03
+Transfer Time: 0.14017319679260254 seconds
+Inference Time: 0.13205814361572266 seconds
+------------------------------------------
+Image ID: 09529cd0-d7f6-47a5-8a5c-0fb3e736d25f
+Transfer Time: 0.11723995208740234 seconds
+Inference Time: 0.10382795333862305 seconds
+------------------------------------------
+Image ID: b5a5c0a4-d5d1-465c-b108-66510d7a1535
+Detected: person with accuracy: 0.7958495020866394
+Detected: person with accuracy: 0.6278039813041687
+Detected: person with accuracy: 0.21781988441944122
+Transfer Time: 0.09378504753112793 seconds
+Inference Time: 0.0821988582611084 seconds
+------------------------------------------
+Image ID: 1c3911d0-afd9-4e05-8b9f-e56bd031c966
+Detected: car with accuracy: 0.4453083276748657
+Detected: aeroplane with accuracy: 0.3897032141685486
+Transfer Time: 0.09432291984558105 seconds
+Inference Time: 0.07862114906311035 seconds
+------------------------------------------
+Image ID: a710d791-a348-47c3-91f1-b405129f5741
+Detected: person with accuracy: 0.738627016544342
+Transfer Time: 0.14388298988342285 seconds
+Inference Time: 0.12702298164367676 seconds
+------------------------------------------
+Image ID: 023ea256-2fdc-4a0a-83e8-ed7c907777ed
+Detected: cat with accuracy: 0.6263395547866821
+Detected: bed with accuracy: 0.4333701729774475
+Detected: bowl with accuracy: 0.24909871816635132
+Transfer Time: 0.10328006744384766 seconds
+Inference Time: 0.09341692924499512 seconds
+------------------------------------------
+Image ID: 4f9c3ffe-e3a5-4252-b3bc-eb9f1599ca37
+Detected: frisbee with accuracy: 0.5970593094825745
+Transfer Time: 0.10294103622436523 seconds
+Inference Time: 0.08460378646850586 seconds
+------------------------------------------
+Image ID: 918804ee-8e56-44d6-833d-9ccbdb4d97da
+Detected: person with accuracy: 0.6912972331047058
+Transfer Time: 0.08949995040893555 seconds
+Inference Time: 0.07611799240112305 seconds
+------------------------------------------
+Image ID: 86bc3f92-d8d8-47be-bb2e-c1d6b2c459a7
+Detected: person with accuracy: 0.9407516121864319
+Detected: person with accuracy: 0.9344493746757507
+Detected: person with accuracy: 0.9142853617668152
+Detected: person with accuracy: 0.6571586728096008
+Detected: person with accuracy: 0.27915096282958984
+Transfer Time: 0.08685898780822754 seconds
+Inference Time: 0.07505607604980469 seconds
+------------------------------------------
+Image ID: 0e2ea621-89c3-4827-8547-64f97a298adb
+Detected: fork with accuracy: 0.5520278811454773
+Transfer Time: 0.08484506607055664 seconds
+Inference Time: 0.07161688804626465 seconds
+------------------------------------------
+Image ID: b3df425a-4039-405d-b205-5efa124f095a
+Detected: truck with accuracy: 0.3999428451061249
+Transfer Time: 0.08890295028686523 seconds
+Inference Time: 0.0705559253692627 seconds
+------------------------------------------
+Image ID: 0dd52f79-a6bf-4182-bf29-4e0e1bd21c0b
+Detected: clock with accuracy: 0.37319862842559814
+Transfer Time: 0.09125375747680664 seconds
+Inference Time: 0.07393574714660645 seconds
+------------------------------------------
+Image ID: 07a76693-62ad-4273-a26a-fd9237f3eaf1
+Detected: cat with accuracy: 0.6288273334503174
+Transfer Time: 0.12528204917907715 seconds
+Inference Time: 0.11005783081054688 seconds
+------------------------------------------
+Image ID: 62dcc706-0b11-4016-be09-b034005d841a
+Detected: chair with accuracy: 0.8363409042358398
+Detected: chair with accuracy: 0.8221297860145569
+Detected: chair with accuracy: 0.5226936340332031
+Detected: chair with accuracy: 0.3840705156326294
+Detected: chair with accuracy: 0.37275832891464233
+Transfer Time: 0.11802983283996582 seconds
+Inference Time: 0.10213112831115723 seconds
+------------------------------------------
+Image ID: 8a898f4d-0123-429a-bbd8-0606feac5e53
+Detected: zebra with accuracy: 0.9324066042900085
+Transfer Time: 0.11086320877075195 seconds
+Inference Time: 0.0987541675567627 seconds
+------------------------------------------
+Image ID: 175e6ee7-2947-40b0-98a1-0c36d25c44fb
+Detected: person with accuracy: 0.8680136799812317
+Detected: tennis racket with accuracy: 0.47806021571159363
+Detected: sports ball with accuracy: 0.24002547562122345
+Transfer Time: 0.11221814155578613 seconds
+Inference Time: 0.09641909599304199 seconds
+------------------------------------------
+Image ID: 5aae8cd2-ec4e-4e0e-b459-6c5575c173df
+Detected: person with accuracy: 0.8423094153404236
+Detected: sports ball with accuracy: 0.7044104337692261
+Detected: pottedplant with accuracy: 0.29067540168762207
+Transfer Time: 0.0825049877166748 seconds
+Inference Time: 0.07074213027954102 seconds
+------------------------------------------
+Image ID: c923d541-9bd7-4c6c-bf3e-0627b5e86763
+Detected: zebra with accuracy: 0.892345666885376
+Transfer Time: 0.0865931510925293 seconds
+Inference Time: 0.07288813591003418 seconds
+------------------------------------------
+Image ID: cceb05e3-c3d9-4cf1-874b-968ed1656c97
+Detected: person with accuracy: 0.8082894682884216
+Detected: person with accuracy: 0.7088367342948914
+Detected: person with accuracy: 0.6651186347007751
+Detected: person with accuracy: 0.3741913139820099
+Detected: person with accuracy: 0.278324693441391
+Transfer Time: 0.09048914909362793 seconds
+Inference Time: 0.07233190536499023 seconds
+------------------------------------------
+Image ID: a60f0360-ac89-406f-a4f8-582eca6296d7
+Detected: person with accuracy: 0.7887879014015198
+Detected: pottedplant with accuracy: 0.4842156171798706
+Detected: person with accuracy: 0.22751469910144806
+Transfer Time: 0.08465409278869629 seconds
+Inference Time: 0.07335591316223145 seconds
+------------------------------------------
+Image ID: ec7a3cf1-b8c3-4888-892c-d4f11bb270df
+Detected: aeroplane with accuracy: 0.6820472478866577
+Transfer Time: 0.10871505737304688 seconds
+Inference Time: 0.09587812423706055 seconds
+------------------------------------------
+Image ID: c5d35c55-b2f7-4c3d-91e9-17e418f661a5
+Detected: mouse with accuracy: 0.2541247606277466
+Detected: person with accuracy: 0.23055393993854523
+Transfer Time: 0.10393500328063965 seconds
+Inference Time: 0.09064292907714844 seconds
+------------------------------------------
+Image ID: 089601c4-7336-4a07-9d91-cf8dab2d2612
+Detected: person with accuracy: 0.8631368279457092
+Detected: tvmonitor with accuracy: 0.3834296464920044
+Transfer Time: 0.106903076171875 seconds
+Inference Time: 0.09570097923278809 seconds
+------------------------------------------
+Image ID: 940f3816-e4d7-4b21-8ce7-37d58811c3f6
+Detected: wine glass with accuracy: 0.6835759282112122
+Detected: wine glass with accuracy: 0.625849187374115
+Detected: wine glass with accuracy: 0.5084543228149414
+Transfer Time: 0.10259199142456055 seconds
+Inference Time: 0.09000921249389648 seconds
+------------------------------------------
+Image ID: dec5c742-1948-485a-87fc-c7782d4599bd
+Detected: train with accuracy: 0.918762743473053
+Transfer Time: 0.09596896171569824 seconds
+Inference Time: 0.07715511322021484 seconds
+------------------------------------------
+Image ID: 3cfeae2f-4173-46de-bd16-aaf44f1714fb
+Detected: bird with accuracy: 0.595940351486206
+Detected: bird with accuracy: 0.5336588621139526
+Detected: bird with accuracy: 0.2963468134403229
+Detected: bird with accuracy: 0.26051515340805054
+Detected: bird with accuracy: 0.2551594376564026
+Detected: bird with accuracy: 0.2286059856414795
+Detected: bird with accuracy: 0.2157459706068039
+Detected: bird with accuracy: 0.20688989758491516
+Transfer Time: 0.08883404731750488 seconds
+Inference Time: 0.07552099227905273 seconds
+------------------------------------------
+Image ID: 2eac1e4b-bd7a-49e8-900f-1cef6aca419d
+Detected: umbrella with accuracy: 0.44114741683006287
+Detected: truck with accuracy: 0.43062353134155273
+Detected: umbrella with accuracy: 0.26037561893463135
+Detected: bicycle with accuracy: 0.23801615834236145
+Detected: umbrella with accuracy: 0.20546835660934448
+Transfer Time: 0.10165882110595703 seconds
+Inference Time: 0.07976222038269043 seconds
+------------------------------------------
+Image ID: fe72cedf-a494-4bea-801a-fbe339723d98
+Detected: laptop with accuracy: 0.9533168077468872
+Detected: tvmonitor with accuracy: 0.7469435930252075
+Detected: keyboard with accuracy: 0.7433915734291077
+Detected: mouse with accuracy: 0.6778305172920227
+Transfer Time: 0.08983612060546875 seconds
+Inference Time: 0.07519197463989258 seconds
+------------------------------------------
+Image ID: 9019cd67-d1bf-4524-af60-f7d7e560cc03
+Detected: bus with accuracy: 0.8277779817581177
+Detected: car with accuracy: 0.30939945578575134
+Transfer Time: 0.09595394134521484 seconds
+Inference Time: 0.07898712158203125 seconds
+------------------------------------------
+Image ID: 0cb61e21-cfd3-4dc1-992b-710b61fd4f04
+Transfer Time: 0.09940385818481445 seconds
+Inference Time: 0.07590389251708984 seconds
+------------------------------------------
+Image ID: 1c6c7e58-5a74-4484-95ba-06406a34966a
+Detected: person with accuracy: 0.4538833200931549
+Detected: surfboard with accuracy: 0.255665123462677
+Transfer Time: 0.0896921157836914 seconds
+Inference Time: 0.0767509937286377 seconds
+------------------------------------------
+Image ID: 1277204b-6995-4751-9657-8d8c5ee16759
+Detected: chair with accuracy: 0.42153120040893555
+Detected: bottle with accuracy: 0.28835329413414
+Transfer Time: 0.2953031063079834 seconds
+Inference Time: 0.2780337333679199 seconds
+------------------------------------------
+Image ID: 5a47489b-b8f4-4a05-bdc5-79695902eb81
+Detected: cow with accuracy: 0.814418613910675
+Transfer Time: 0.36020779609680176 seconds
+Inference Time: 0.33998799324035645 seconds
+------------------------------------------
+Image ID: dabaaecf-5f24-4763-b8fb-73728dac9ff6
+Detected: teddy bear with accuracy: 0.3043152093887329
+Transfer Time: 0.1340339183807373 seconds
+Inference Time: 0.11830520629882812 seconds
+------------------------------------------
+Image ID: 67464298-904e-41a7-9afd-5678ba7a2d4a
+Detected: zebra with accuracy: 0.9233834743499756
+Transfer Time: 0.12078475952148438 seconds
+Inference Time: 0.1042928695678711 seconds
+------------------------------------------
+Image ID: 6f5e4047-3bf7-4198-bce1-f85a191ddbf3
+Detected: person with accuracy: 0.9073323607444763
+Detected: person with accuracy: 0.6911009550094604
+Transfer Time: 0.1583847999572754 seconds
+Inference Time: 0.13941287994384766 seconds
+------------------------------------------
+Image ID: d4ef3076-0544-4cc4-8ea6-f09e7e7bf749
+Detected: person with accuracy: 0.7139199376106262
+Detected: car with accuracy: 0.46539732813835144
+Detected: person with accuracy: 0.42622312903404236
+Detected: person with accuracy: 0.4128009080886841
+Detected: person with accuracy: 0.4108234941959381
+Detected: person with accuracy: 0.4014540910720825
+Transfer Time: 0.14304089546203613 seconds
+Inference Time: 0.11606693267822266 seconds
+------------------------------------------
+Image ID: cd00e888-f0f0-46f4-a79e-1725c993954d
+Transfer Time: 0.14649081230163574 seconds
+Inference Time: 0.13121891021728516 seconds
+------------------------------------------
+Image ID: 51ce994b-bbf9-40b3-bef9-e8d1a80bfb7f
+Detected: clock with accuracy: 0.8265541791915894
+Transfer Time: 0.36822986602783203 seconds
+Inference Time: 0.305131196975708 seconds
+------------------------------------------
+Image ID: 27677a22-c57f-4d34-881f-2ed6f1635f34
+Detected: person with accuracy: 0.4878813922405243
+Detected: cell phone with accuracy: 0.30365821719169617
+Detected: bowl with accuracy: 0.27846232056617737
+Detected: person with accuracy: 0.277334988117218
+Detected: cell phone with accuracy: 0.2220223993062973
+Detected: person with accuracy: 0.22000186145305634
+Transfer Time: 0.4745490550994873 seconds
+Inference Time: 0.44931888580322266 seconds
+------------------------------------------
+Image ID: 97a6452c-6e37-4f2f-b726-7ad783a66ce9
+Detected: giraffe with accuracy: 0.9587628245353699
+Detected: giraffe with accuracy: 0.6494002938270569
+Transfer Time: 0.2990119457244873 seconds
+Inference Time: 0.2606062889099121 seconds
+------------------------------------------
+Image ID: ea969f94-0c90-432a-86b1-248ec365ed78
+Detected: kite with accuracy: 0.6150845885276794
+Detected: person with accuracy: 0.28190284967422485
+Transfer Time: 0.3301661014556885 seconds
+Inference Time: 0.1157832145690918 seconds
+------------------------------------------
+Image ID: c45961d0-3fea-48e5-b081-bfe1132979bb
+Detected: wine glass with accuracy: 0.7888672351837158
+Detected: pizza with accuracy: 0.5961829423904419
+Detected: bottle with accuracy: 0.5348419547080994
+Detected: cup with accuracy: 0.29867812991142273
+Transfer Time: 0.12476491928100586 seconds
+Inference Time: 0.11237096786499023 seconds
+------------------------------------------
+Image ID: 685f848f-cb81-4362-8952-74a5c2c2a5de
+Detected: person with accuracy: 0.9040871262550354
+Detected: person with accuracy: 0.8661910891532898
+Detected: person with accuracy: 0.797520101070404
+Detected: person with accuracy: 0.7587290406227112
+Detected: person with accuracy: 0.7030680775642395
+Detected: person with accuracy: 0.6659514307975769
+Detected: person with accuracy: 0.5586759448051453
+Detected: person with accuracy: 0.39424338936805725
+Transfer Time: 0.12163996696472168 seconds
+Inference Time: 0.10537195205688477 seconds
+------------------------------------------
+Image ID: b290eadd-c91c-48a2-be7f-f72e654225d3
+Detected: tennis racket with accuracy: 0.949976921081543
+Transfer Time: 0.19496417045593262 seconds
+Inference Time: 0.1782839298248291 seconds
+------------------------------------------
+Image ID: 36743313-6ce0-49cf-b490-3b7ec54038ae
+Detected: car with accuracy: 0.6420685648918152
+Detected: car with accuracy: 0.28276270627975464
+Detected: car with accuracy: 0.2548520863056183
+Transfer Time: 0.1248619556427002 seconds
+Inference Time: 0.09776186943054199 seconds
+------------------------------------------
+Image ID: 9572d75f-215c-4d34-b785-e658069ef330
+Transfer Time: 0.08859992027282715 seconds
+Inference Time: 0.07801508903503418 seconds
+------------------------------------------
+Image ID: 7353eca8-1927-4ec3-8372-0a00d15cf0d7
+Transfer Time: 0.09541988372802734 seconds
+Inference Time: 0.07482194900512695 seconds
+------------------------------------------
+Image ID: f10705a0-2b46-46e3-91bd-bb16b9863671
+Detected: person with accuracy: 0.8584588170051575
+Detected: person with accuracy: 0.7512785196304321
+Detected: person with accuracy: 0.6837301850318909
+Detected: person with accuracy: 0.5483192801475525
+Detected: person with accuracy: 0.5293080806732178
+Detected: person with accuracy: 0.39650362730026245
+Detected: person with accuracy: 0.3645225465297699
+Detected: person with accuracy: 0.34960612654685974
+Detected: person with accuracy: 0.3253381848335266
+Detected: person with accuracy: 0.23484137654304504
+Detected: suitcase with accuracy: 0.22750678658485413
+Transfer Time: 0.083953857421875 seconds
+Inference Time: 0.07209277153015137 seconds
+------------------------------------------
+Image ID: 756724ee-04af-4eeb-b7e7-93b3617efd06
+Detected: person with accuracy: 0.43569043278694153
+Detected: person with accuracy: 0.3814525902271271
+Detected: person with accuracy: 0.2287570834159851
+Transfer Time: 0.10244917869567871 seconds
+Inference Time: 0.0848393440246582 seconds
+------------------------------------------
+Image ID: 6367efa7-5c7b-4cac-befb-b903286584e6
+Detected: bottle with accuracy: 0.3353287875652313
+Detected: cup with accuracy: 0.2629566788673401
+Detected: sofa with accuracy: 0.2553778886795044
+Detected: bowl with accuracy: 0.2369907945394516
+Detected: sink with accuracy: 0.20658797025680542
+Detected: cup with accuracy: 0.20207569003105164
+Transfer Time: 0.11002969741821289 seconds
+Inference Time: 0.09655189514160156 seconds
+------------------------------------------
+Image ID: d25a66b1-eb43-42f9-ab06-a1e49ca9301c
+Detected: aeroplane with accuracy: 0.3871372640132904
+Transfer Time: 0.1156761646270752 seconds
+Inference Time: 0.10316324234008789 seconds
+------------------------------------------
+Image ID: 4a926309-1799-453a-a1f2-372f54d4d500
+Detected: motorbike with accuracy: 0.8182287812232971
+Transfer Time: 0.16625308990478516 seconds
+Inference Time: 0.1418600082397461 seconds
+------------------------------------------
+Image ID: 2901aea1-449c-4b09-be23-5dc5a58889b9
+Detected: person with accuracy: 0.7120239734649658
+Transfer Time: 0.15362215042114258 seconds
+Inference Time: 0.13885998725891113 seconds
+------------------------------------------
+Image ID: 287dfc69-58aa-428a-a96e-c0521871e56f
+Detected: cell phone with accuracy: 0.7210594415664673
+Detected: bowl with accuracy: 0.29359570145606995
+Detected: bowl with accuracy: 0.24009980261325836
+Transfer Time: 0.25549912452697754 seconds
+Inference Time: 0.24355006217956543 seconds
+------------------------------------------
+Image ID: 25e16492-b724-4409-97fc-e19d0893b4ff
+Detected: motorbike with accuracy: 0.2913644313812256
+Transfer Time: 0.13986611366271973 seconds
+Inference Time: 0.1212167739868164 seconds
+------------------------------------------
+Image ID: 5124d70f-13e7-4b64-a317-6e6f51d575dd
+Detected: cow with accuracy: 0.6281942129135132
+Transfer Time: 0.16893792152404785 seconds
+Inference Time: 0.14925909042358398 seconds
+------------------------------------------
