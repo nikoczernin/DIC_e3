@@ -113,7 +113,7 @@ def main(input_folder, endpoint):
     # Process and save results
     process_responses(combined_results)
 
-# Start point
+# Run in terminal: python client.py input_folder http://127.0.0.1:5000/object_detection
 if __name__ == '__main__':
     # Print usage if incorrect arguments
     if len(sys.argv) != 3:
@@ -128,4 +128,4 @@ if __name__ == '__main__':
 
     # Execute the main function 100x for the experiment
     #for _ in range(100):
-    #    main(input_folder, endpoint,)
+    #    main(input_folder, endpoint)

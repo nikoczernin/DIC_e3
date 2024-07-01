@@ -3,7 +3,7 @@ input_folder
 .ipynb_checkpoints
 .idea
 .venv
-output.txt
+
 .DS_Store
 # Ignore zip files named python.zip
 python.zip

@@ -7,8 +7,6 @@
       <excludeFolder url="file://$MODULE_DIR$/.ipynb_checkpoints" />
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
       <excludeFolder url="file://$MODULE_DIR$/input_folder" />
-      <excludeFolder url="file://$MODULE_DIR$/output" />
-      <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/python/yolo/yolo_tiny_configs" />
     </content>
     <orderEntry type="inheritedJdk" />
