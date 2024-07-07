@@ -15,3 +15,7 @@ python *.zip
 /python/yolo/yolo_tiny_configs/
 yolo_tiny_configs
 yolo/yolo_tiny_configs
+output
+
+aws_experiment_results.csv
+aws_experiment_results_1000.csv

@@ -7,7 +7,6 @@ from AWS_api import AWS
 import os
 from pprint import pprint
 import pandas as pd
-from decimal import Decimal
 
 # Main function to process all images in the input folder and send them to the endpoint
 def upload_100(input_folder):
@@ -51,6 +50,56 @@ def upload_100(input_folder):
         json.dump(upload_data, f)
 
 
+
+
+# Main function to process all images in the input folder and send them to the endpoint
+def upload_1000(input_folder):
+    """
+    Uploads 100 images from the specified input folder to an S3 bucket and logs the upload time.
+
+    Args:
+    input_folder (str): Path to the folder containing the images to be uploaded.
+
+    Returns:
+    None: The function writes the upload data to a JSON file.
+    """
+    aws = AWS()
+    bucket = "yolobuck"  # Your S3 bucket name
+
+    # List to store the results of each upload, including transfer time and file size
+    upload_data = []
+
+    # Loop through all image files in the input folder
+    for image_filename in os.listdir(input_folder):
+        # do every image 1000 times
+        for i in range(100):
+
+
+            s3_file_path = image_filename.split("/")[-1] + f"_{i}" # Name to save as in S3
+            image_path = os.path.join(input_folder, image_filename)
+
+            # Upload the image to S3 and measure the time taken
+            start_time = time()
+            uploaded = aws.upload_to_s3(image_path, bucket, s3_file_path)
+            end_time = time()
+            transfer_time = end_time - start_time
+
+            # Append the result to the upload_data list
+            upload_data.append({
+                "Filename": image_filename + f"_{i}",
+                "TransferTime": transfer_time,
+                "FileSize": os.path.getsize(image_path)
+            })
+
+    print("1000 uploads done")
+
+    # Write the upload data to a JSON file
+    with open("uploaded_aws_data.json", "w") as f:
+        json.dump(upload_data, f)
+
+
+
+
 def main():
     """
     Main function to upload a single image to S3 and print the DynamoDB scan results.
@@ -92,7 +141,7 @@ def get_data():
 
 
 if __name__ == '__main__':
-    upload_100("input_folder")
+    upload_1000("input_folder")
     sleep(20)  # Wait for 20 seconds to ensure all uploads and processing are done
 
     res = get_data()
@@ -127,4 +176,4 @@ if __name__ == '__main__':
     print(final.columns)
 
     # Write the final DataFrame to a CSV file
-    final.to_csv("aws_experiment_results.csv", )
+    final.to_csv("aws_experiment_results_1000.csv", )
