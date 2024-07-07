@@ -11,6 +11,19 @@ run `aws s3 ls` to check if it works.
 
 # Running the experiments
 ## Local
+1.  Create a New Virtual Environment (Recommended)
+2. Install the Required Packages
+```
+pip install -r requirements.txt
+```
+3. Start the Flask Server
+```
+python app.py
+```
+4. Run client
+```
+python client.py input_folder http://127.0.0.1:5000/object_detection
+```
 ## Remote
 Requires valid AWS CLI credentials!  
 Go into the file `YOLO_AWS_experiment.py`.  
