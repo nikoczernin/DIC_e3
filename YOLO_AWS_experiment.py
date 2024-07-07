@@ -7,6 +7,7 @@ from AWS_api import AWS
 import os
 from pprint import pprint
 import pandas as pd
+import sys
 
 # Main function to process all images in the input folder and send them to the endpoint
 def upload_100(input_folder):
@@ -100,7 +101,7 @@ def upload_1000(input_folder):
 
 
 
-def main():
+def test_single():
     """
     Main function to upload a single image to S3 and print the DynamoDB scan results.
 
@@ -140,8 +141,21 @@ def get_data():
     return aws.scan_dynamodb()
 
 
+
+
 if __name__ == '__main__':
-    upload_1000("input_folder")
+    args = sys.argv()[1:]
+
+
+    experiment = 100
+    if args[0] == "1000":
+        experiment = 1000
+
+    if experiment == 1000:
+        upload_1000("input_folder")
+    else:
+        upload_1000("input_folder")
+
     sleep(20)  # Wait for 20 seconds to ensure all uploads and processing are done
 
     res = get_data()
@@ -176,4 +190,4 @@ if __name__ == '__main__':
     print(final.columns)
 
     # Write the final DataFrame to a CSV file
-    final.to_csv("aws_experiment_results_1000.csv", )
+    final.to_csv(f"aws_experiment_results_{experiment}.csv", )

@@ -4,7 +4,7 @@ input_folder
 .idea
 .venv
 
-.DS_Store
+
 # Ignore zip files named python.zip
 python.zip
 
@@ -17,5 +17,3 @@ yolo_tiny_configs
 yolo/yolo_tiny_configs
 output
 
-aws_experiment_results.csv
-aws_experiment_results_1000.csv
